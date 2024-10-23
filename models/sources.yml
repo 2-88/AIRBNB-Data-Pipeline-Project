@@ -1,0 +1,19 @@
+version: 2
+sources:
+  - name: airbnb
+    description: File which contains all the original data
+    schema: raw
+    tables:
+      - name: listings
+        description: The raw_listings table
+        identifier: raw_listings
+      - name: hosts
+        description: The raw_host table
+        identifier: raw_hosts
+      - name: reviews
+        description: The raw_review table
+        identifier: raw_reviews
+        loaded_at_field: date
+        freshness:
+          warn_after: {count: 1, period: hour}
+          error_after: {count: 24, period: hour}

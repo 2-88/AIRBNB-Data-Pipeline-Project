@@ -1,0 +1,55 @@
+Running with dbt=1.7.18
+Registered adapter: snowflake=1.7.1
+[[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 5 unused configuration paths:
+- models.dbtlearn1.src_listings
+- models.dbtlearn1.dim_hosts_cleansed
+- models.dbtlearn1.src_reviews
+- models.dbtlearn1.src_hosts
+- models.dbtlearn1.dim_listings_cleansed
+Found 8 models, 2 snapshots, 1 analysis, 4 tests, 1 seed, 3 sources, 1 exposure, 0 metrics, 809 macros, 0 groups, 0 semantic models
+
+Concurrency: 1 threads (target='dev')
+
+1 of 15 START sql view model DEV.src_hosts ..................................... [RUN]
+1 of 15 OK created sql view model DEV.src_hosts ................................ [[32mSUCCESS 1[0m in 1.34s]
+2 of 15 START sql view model DEV.src_listings .................................. [RUN]
+2 of 15 OK created sql view model DEV.src_listings ............................. [[32mSUCCESS 1[0m in 2.64s]
+3 of 15 START sql view model DEV.src_reviews ................................... [RUN]
+3 of 15 OK created sql view model DEV.src_reviews .............................. [[32mSUCCESS 1[0m in 1.89s]
+4 of 15 START seed file DEV.seed_full_moon_dates ............................... [RUN]
+4 of 15 OK loaded seed file DEV.seed_full_moon_dates ........................... [[32mINSERT 272[0m in 2.71s]
+5 of 15 START snapshot DEV.scd_raw_hosts ....................................... [RUN]
+5 of 15 OK snapshotted DEV.scd_raw_hosts ....................................... [[32mSUCCESS 0[0m in 3.37s]
+6 of 15 START snapshot DEV.scd_raw_listings .................................... [RUN]
+6 of 15 OK snapshotted DEV.scd_raw_listings .................................... [[32mSUCCESS 0[0m in 3.86s]
+7 of 15 START test generic_test ................................................ [RUN]
+7 of 15 ERROR generic_test ..................................................... [[31mERROR[0m in 1.24s]
+8 of 15 START sql table model DEV.dim_hosts_cleansed ........................... [RUN]
+8 of 15 OK created sql table model DEV.dim_hosts_cleansed ...................... [[32mSUCCESS 1[0m in 3.19s]
+9 of 15 START sql table model DEV.dim_listings_cleansed ........................ [RUN]
+9 of 15 OK created sql table model DEV.dim_listings_cleansed ................... [[32mSUCCESS 1[0m in 2.53s]
+10 of 15 START sql incremental model DEV.fct_reviews ........................... [RUN]
+10 of 15 OK created sql incremental model DEV.fct_reviews ...................... [[32mSUCCESS 0[0m in 3.24s]
+11 of 15 START test dim_listings_minimum_nights ................................ [RUN]
+11 of 15 PASS dim_listings_minimum_nights ...................................... [[32mPASS[0m in 1.33s]
+12 of 15 START test no_nulls_in_dim_listings ................................... [RUN]
+12 of 15 PASS no_nulls_in_dim_listings ......................................... [[32mPASS[0m in 1.11s]
+13 of 15 START sql table model DEV.mart_full_moon_reviews ...................... [RUN]
+13 of 15 OK created sql table model DEV.mart_full_moon_reviews ................. [[32mSUCCESS 1[0m in 2.80s]
+14 of 15 START test consistent_created_at ...................................... [RUN]
+14 of 15 PASS consistent_created_at ............................................ [[32mPASS[0m in 1.21s]
+15 of 15 START sql view model DEV.dim_listings_with_hosts ...................... [RUN]
+15 of 15 OK created sql view model DEV.dim_listings_with_hosts ................. [[32mSUCCESS 1[0m in 1.29s]
+
+Finished running 4 view models, 1 seed, 2 snapshots, 4 tests, 3 table models, 1 incremental model in 0 hours 0 minutes and 36.61 seconds (36.61s).
+
+[31mCompleted with 1 error and 0 warnings:[0m
+
+  Database Error in test generic_test (tests\generic_test.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 6 at position 6 unexpected 'version'.
+  syntax error line 24 at position 77 unexpected ']'.
+  compiled Code at target\dbtlearn1_dbt_assets-9b34604-eeb652f\run\dbtlearn1\tests\generic_test.sql
+
+Done. PASS=14 WARN=0 ERROR=1 SKIP=0 TOTAL=15

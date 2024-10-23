@@ -1,0 +1,102 @@
+[32m2024-10-13 17:12:32 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - LOGS_CAPTURED - Started capturing logs in process (pid: 22648).
+[32m2024-10-13 17:12:32 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_START - Started execution of step "dbtlearn1_dbt_assets".
+[32m2024-10-13 17:12:32 +0100[0m - dagster - [34mINFO[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - dbtlearn1_dbt_assets - A dbt subsetted execution is not being performed. Using the default dbt selection arguments `['--select', 'fqn:*']`.
+[32m2024-10-13 17:12:33 +0100[0m - dagster - [34mWARNING[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - dbtlearn1_dbt_assets - An error was encountered when creating a handle to the dbt adapter in Dagster.
+Traceback (most recent call last):
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster_dbt\core\resource.py", line 677, in cli
+    adapter = self._initialize_adapter(cli_vars)
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster_dbt\core\resource.py", line 365, in _initialize_adapter
+    profile = load_profile(self.project_dir, cli_vars, self.profile, self.target)
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dbt\config\runtime.py", line 70, in load_profile
+    profile = Profile.render(
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dbt\config\profile.py", line 399, in render
+    return cls.from_raw_profiles(
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dbt\config\profile.py", line 356, in from_raw_profiles
+    raise DbtProjectError("Could not find profile named '{}'".format(profile_name))
+dbt.exceptions.DbtProjectError: Runtime Error
+  Could not find profile named 'dbtlearn1'
+[32m2024-10-13 17:12:33 +0100[0m - dagster - [34mINFO[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - dbtlearn1_dbt_assets - Copying `C:\Users\ABUZAID SALES\Course\dbtlearn1\target\partial_parse.msgpack` to `C:\Users\ABUZAID SALES\Course\dbtlearn1\target\dbtlearn1_dbt_assets-88ae946-fadb0e4\partial_parse.msgpack` to take advantage of partial parsing.
+[32m2024-10-13 17:12:33 +0100[0m - dagster - [34mINFO[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - dbtlearn1_dbt_assets - Running dbt command: `dbt build --select fqn:*`.
+[32m2024-10-13 17:12:47 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "model_dbtlearn1_src_hosts" of type "Nothing". (Type check passed).
+[32m2024-10-13 17:12:47 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_MATERIALIZATION - Materialized value src_hosts.
+[32m2024-10-13 17:12:49 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "model_dbtlearn1_src_listings" of type "Nothing". (Type check passed).
+[32m2024-10-13 17:12:49 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_MATERIALIZATION - Materialized value src_listings.
+[32m2024-10-13 17:12:50 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "model_dbtlearn1_src_reviews" of type "Nothing". (Type check passed).
+[32m2024-10-13 17:12:50 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_MATERIALIZATION - Materialized value src_reviews.
+[32m2024-10-13 17:12:55 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "seed_dbtlearn1_seed_full_moon_dates" of type "Nothing". (Type check passed).
+[32m2024-10-13 17:12:55 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_MATERIALIZATION - Materialized value seed_full_moon_dates.
+[32m2024-10-13 17:12:59 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "snapshot_dbtlearn1_scd_raw_hosts" of type "Nothing". (Type check passed).
+[32m2024-10-13 17:12:59 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_MATERIALIZATION - Materialized value scd_raw_hosts.
+[32m2024-10-13 17:13:04 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "snapshot_dbtlearn1_scd_raw_listings" of type "Nothing". (Type check passed).
+[32m2024-10-13 17:13:04 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_MATERIALIZATION - Materialized value scd_raw_listings.
+[32m2024-10-13 17:13:05 +0100[0m - dagster - [34mWARNING[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - dbtlearn1_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `generic_test`.
+
+`generic_test` is a singular test with multiple dependencies. Configure an asset key in the test's dbt meta to load it as an asset check.
+
+This test was included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+[32m2024-10-13 17:13:07 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "model_dbtlearn1_dim_hosts_cleansed" of type "Nothing". (Type check passed).
+[32m2024-10-13 17:13:07 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_MATERIALIZATION - Materialized value dim_hosts_cleansed.
+[32m2024-10-13 17:13:09 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "model_dbtlearn1_dim_listings_cleansed" of type "Nothing". (Type check passed).
+[32m2024-10-13 17:13:09 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_MATERIALIZATION - Materialized value dim_listings_cleansed.
+[32m2024-10-13 17:13:11 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "model_dbtlearn1_fct_reviews" of type "Nothing". (Type check passed).
+[32m2024-10-13 17:13:12 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_MATERIALIZATION - Materialized value fct_reviews.
+[32m2024-10-13 17:13:12 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_CHECK_EVALUATION - ASSET_CHECK_EVALUATION for step dbtlearn1_dbt_assets
+[32m2024-10-13 17:13:12 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "dim_listings_cleansed_dim_listings_minimum_nights" of type "Any". (Type check passed).
+[32m2024-10-13 17:13:14 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_CHECK_EVALUATION - ASSET_CHECK_EVALUATION for step dbtlearn1_dbt_assets
+[32m2024-10-13 17:13:14 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "dim_listings_cleansed_no_nulls_in_dim_listings" of type "Any". (Type check passed).
+[32m2024-10-13 17:13:17 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "model_dbtlearn1_mart_full_moon_reviews" of type "Nothing". (Type check passed).
+[32m2024-10-13 17:13:18 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_MATERIALIZATION - Materialized value mart_full_moon_reviews.
+[32m2024-10-13 17:13:19 +0100[0m - dagster - [34mWARNING[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - dbtlearn1_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `consistent_created_at`.
+
+`consistent_created_at` is a singular test with multiple dependencies. Configure an asset key in the test's dbt meta to load it as an asset check.
+
+This test was included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+[32m2024-10-13 17:13:19 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step dbtlearn1_dbt_assets
+[32m2024-10-13 17:13:19 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step dbtlearn1_dbt_assets
+[32m2024-10-13 17:13:20 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_OUTPUT - Yielded output "model_dbtlearn1_dim_listings_with_hosts" of type "Nothing". (Type check passed).
+[32m2024-10-13 17:13:21 +0100[0m - dagster - [34mDEBUG[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - ASSET_MATERIALIZATION - Materialized value dim_listings_with_hosts.
+[32m2024-10-13 17:13:21 +0100[0m - dagster - [34mINFO[0m - materialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - dbtlearn1_dbt_assets - Finished dbt command: `dbt build --select fqn:*`.
+[32m2024-10-13 17:13:21 +0100[0m - dagster - [34mERROR[0m - [31mmaterialize_dbt_models - 88ae946c-244b-44ea-afe8-7f8dad8b350f - 22648 - dbtlearn1_dbt_assets - STEP_FAILURE - Execution of step "dbtlearn1_dbt_assets" failed.
+
+dagster_dbt.errors.DagsterDbtCliRuntimeError: The dbt CLI process with command
+
+`dbt build --select fqn:*`
+
+failed with exit code `1`. Check the stdout in the Dagster compute logs for the full information about the error, or view the dbt debug log: C:\Users\ABUZAID SALES\Course\dbtlearn1\target\dbtlearn1_dbt_assets-88ae946-fadb0e4\dbt.log.
+
+Errors parsed from dbt logs:
+
+7 of 15 ERROR generic_test ..................................................... [[31mERROR[0m in 1.14s]
+
+  Database Error in test generic_test (tests\generic_test.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 6 at position 6 unexpected 'version'.
+  syntax error line 24 at position 77 unexpected ']'.
+  compiled Code at target\dbtlearn1_dbt_assets-88ae946-fadb0e4\run\dbtlearn1\tests\generic_test.sql
+
+Stack Trace:
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster\_core\execution\plan\execute_plan.py", line 245, in dagster_event_sequence_for_step
+    for step_event in check.generator(step_events):
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster\_core\execution\plan\execute_step.py", line 499, in core_dagster_event_sequence_for_step
+    for user_event in _step_output_error_checked_user_event_sequence(
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster\_core\execution\plan\execute_step.py", line 183, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster\_core\execution\plan\execute_step.py", line 87, in _process_asset_results_to_events
+    for user_event in user_event_sequence:
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster\_core\execution\plan\compute.py", line 197, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn, compute_context):
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster\_core\execution\plan\compute.py", line 166, in _yield_compute_results
+    for event in iterate_with_context(
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster\_utils\__init__.py", line 482, in iterate_with_context
+    next_output = next(iterator)
+  File "C:\Users\ABUZAID SALES\Course\dbtlearn1\dbt_dagster_project\dbt_dagster_project\assets.py", line 9, in dbtlearn1_dbt_assets
+    yield from dbt.cli(["build"], context=context).stream()
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster_dbt\core\dbt_event_iterator.py", line 203, in __next__
+    return next(self._inner_iterator)
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster_dbt\core\dbt_cli_invocation.py", line 271, in _stream_asset_events
+    for event in self.stream_raw_events():
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster_dbt\core\dbt_cli_invocation.py", line 364, in stream_raw_events
+    self._raise_on_error()
+  File "C:\Users\ABUZAID SALES\Course\venv\lib\site-packages\dagster_dbt\core\dbt_cli_invocation.py", line 457, in _raise_on_error
+    raise error
+[0m
